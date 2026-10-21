@@ -1,0 +1,23 @@
+user_msgs=5 to=17
+## USER
+Plan my week please
+
+## USER
+I start work at 8
+
+## ASSISTANT
+Reading your tasks.
+[tool:Read] tasks.md
+
+## USER
+Actually, P1 is the board deck
+
+## USER
+Mid-turn: and move the review to Friday
+
+## USER
+Here is my brief [pasted by user, not necessarily written by them]
+Goals for Q1
+
+## ASSISTANT
+Got it.

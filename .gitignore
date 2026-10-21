@@ -1,0 +1,13 @@
+# Personal / machine-local state — never published
+private/
+.claude/settings.local.json
+memory/.captured.json
+memory/.runs/
+
+# Editors / OS
+.DS_Store
+
+# Python
+__pycache__/
+.claude/worktrees/
+.claude/launch.json

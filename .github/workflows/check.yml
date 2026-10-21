@@ -1,0 +1,24 @@
+name: check
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install PyYAML (strict frontmatter parsing)
+        run: pip install pyyaml
+      - name: Validate skills, scripts and the app
+        run: scripts/check.sh
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Link skills with a junction and verify they resolve
+        run: |
+          python scripts/setup.py
+          python -c "import pathlib,sys; sys.exit(0 if pathlib.Path('.claude/skills/capture/SKILL.md').is_file() else 1)"
